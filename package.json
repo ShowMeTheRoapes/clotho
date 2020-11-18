@@ -1,0 +1,13 @@
+{
+  "name": "clotho",
+  "version": "1.0.0",
+  "description": "A Discord bot to help us make decisions as a group",
+  "main": "index.js",
+  "repository": "git@github.com:ShowMeTheRoapes/clotho.git",
+  "author": "Alex Hoopes <kevin.alex.hoopes@gmail.com>",
+  "license": "GPL",
+  "private": false,
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  }
+}
