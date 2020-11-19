@@ -1,5 +1,7 @@
 const ping = require('./ping')
+const startPoll = require('./startpoll')
 
 module.exports = {
-    ping
+    ping,
+    startPoll,
 }
