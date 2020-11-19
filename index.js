@@ -20,19 +20,19 @@ client.on('message', async message => {
     const args = commandBody.split(' ')
     const command = args.shift().toLowerCase()
 
-    const runCommand = (actionName, actionFunc) => {
+    const runCommand = async (actionName, actionFunc) => {
         console.log(`${actionName} command received from ${message.author.username}`)
-        actionFunc()
+        await actionFunc()
         message.delete()
     }
 
     switch (command) {
         case 'ping':
-            runCommand('Ping', () => actions.ping(message))
+            await runCommand('Ping', () => actions.ping(message))
             break
 
         case 'startpoll':
-            runCommand('Start Poll', () => actions.startPoll(poll, message, args))
+            await runCommand('Start Poll', () => actions.startPoll(poll, message, args))
             break
 
         case 'submit':
@@ -109,7 +109,7 @@ client.on('message', async message => {
             break
 
         case 'help':
-            runCommand('Help', () => actions.help(message))
+            await runCommand('Help', () => actions.help(message))
             break
 
         default:
