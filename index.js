@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
-const axios = require('axios').default
 const actions  = require('./actions')
 
 const client = new Discord.Client()
@@ -21,7 +20,6 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase()
 
     const runCommand = async (actionName, actionFunc) => {
-        //TODO: Determine why the messages aren't being deleted anymore
         console.log(`${actionName} command received from ${message.author.username}`)
         await actionFunc()
         message.delete()
