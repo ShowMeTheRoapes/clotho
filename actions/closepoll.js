@@ -1,4 +1,5 @@
 const { STRAWPOLL_KEY } = require('../config.json')
+const axios = require('axios').default
 
 /**
  * Close the current poll, create a StrawPoll, and post it in the channel automatically.

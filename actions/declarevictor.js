@@ -1,4 +1,5 @@
 const { STRAWPOLL_KEY } = require('../config.json')
+const axios = require('axios').default
 
 /**
  * Determine the victor of the StrawPoll and post it in the channel.
@@ -22,9 +23,10 @@ async function declareVictor(poll, message) {
     if (winner.length > 1) {
         message.channel.send(`There has been a tie between the following candidates: ${winner.map(cand => cand.answer).join(', ')}\nBreak the tie however you see fit!`)
     } else {
-        message.channel.send(`A champion has been selected! The winner of "${poll.title}" is... ***${winner[0].answer}***!`)
+        message.channel.send(`A champion has been selected! The winner of "${poll.title}" is... ***${winner[0].answer}!***`)
     }
 
+    // TODO: Extract resetting poll information to a function
     poll.candidates = {}
     poll.title = ''
     poll.strawPollId = ''
