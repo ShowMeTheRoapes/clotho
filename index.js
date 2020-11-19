@@ -21,6 +21,7 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase()
 
     const runCommand = async (actionName, actionFunc) => {
+        //TODO: Determine why the messages aren't being deleted anymore
         console.log(`${actionName} command received from ${message.author.username}`)
         await actionFunc()
         message.delete()
@@ -44,26 +45,7 @@ client.on('message', async message => {
             break
 
         case 'declare':
-            const getResponse = await axios.get(`https://strawpoll.com/api/poll/${pollId}`, { headers: { 'API-KEY': config.STRAWPOLL_KEY } })
-            const results = getResponse.data.content.poll.poll_answers
-            results.sort((a, b) => {
-                if (a.votes < b.votes) return -1
-                if (a.votes > b.votes) return 1
-                return 0
-            })
-            const winner = results.filter(res => res.votes === results[results.length - 1].votes)
-
-            if (winner.length > 1) {
-                message.channel.send(`There has been a tie between the following candidates: ${winner.map(cand => cand.answer).join(', ')}\nBreak the tie however you see fit!`)
-            } else {
-                message.channel.send(`A champion has been selected! Enjoy ${winner[0].answer}!`)
-            }
-
-            message.delete()
-            options = {}
-            pollTitle = 'Default Poll Title'
-            pollId = ''
-
+            await runCommand('Declare Victor', () => actions.declareVictor(poll, message))
             break
 
         case 'help':
