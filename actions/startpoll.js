@@ -1,3 +1,13 @@
+function validate(poll, title) {
+    if (poll.title) {
+        throw new Error(`Poll "${poll.title}" is already running! Please wait until the current poll is complete to start a new one.`)
+    }
+
+    if (!title) {
+        throw new Error('Please provide a title for the poll.')
+    }
+}
+
 /**
  * Start a poll with a title.
  * If a poll is already active, it will reject the request until that poll is closed.
@@ -6,14 +16,11 @@
  * @param {String[]} args The arguments that were provided after the command
  */
 function startPoll(poll, message, args) {
-    if (poll.title) {
-        message.reply(`Poll "${poll.title}" is already running! Please wait until the current poll is complete.`)
-        return
-    }
-
     const title = args.join(' ').trim()
-    if (!title) {
-        message.reply('Please provide a title for the poll.')
+    try {
+        validate(poll, title)
+    } catch (error) {
+        message.reply(`ERROR: ${error.message}`)
         return
     }
 
