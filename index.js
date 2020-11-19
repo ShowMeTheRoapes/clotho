@@ -20,6 +20,12 @@ client.on('message', async message => {
     const args = commandBody.split(' ')
     const command = args.shift().toLowerCase()
 
+    const runCommand = (actionName, actionFunc) => {
+        console.log(`${actionName} command received from ${message.author.username}`)
+        actionFunc()
+        message.delete()
+    }
+
     switch (command) {
         case 'ping':
             console.log(`Ping received from ${message.author.username}`)
