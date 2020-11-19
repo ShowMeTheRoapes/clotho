@@ -1,10 +1,11 @@
+const { Message } = require('discord.js')
 /**
  * Allow a user to submit a candidate for the poll.
  * If the user has already submitted a candidate and another is submitted,
  * the new one will replace the old one.
  * @param {object} poll The Poll object holding all Poll information
- * @param {object} message The Message object from the Discord.js API
- * @param {String[]} args The arguments that were provided after the command
+ * @param {Message} message The Message object from the Discord.js API
+ * @param {string[]} args The arguments that were provided after the command
  */
 async function submit(poll, message, args) {
     const newCandidate = args.join(' ')

@@ -1,10 +1,11 @@
 const { STRAWPOLL_KEY } = require('../config.json')
+const { Message } = require('discord.js')
 const axios = require('axios').default
 
 /**
  * Determine the victor of the StrawPoll and post it in the channel.
  * @param {object} poll The Poll object holding all Poll information
- * @param {object} message The Message object from the Discord.js API
+ * @param {Message} message The Message object from the Discord.js API
  */
 async function declareVictor(poll, message) {
     // TODO: Ensure a poll is running before trying this

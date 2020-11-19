@@ -1,3 +1,5 @@
+const { Message } = require('discord.js')
+
 const helpMessage = `
 Here's a list of the valid commands for Clotho!
 
@@ -12,7 +14,7 @@ The typical order for using these commands is the way they are listed above (wit
 
 /**
  * Send a message to the channel that lists all of the eligible commands
- * @param {object} message The Message object from the Discord.js API
+ * @param {Message} message The Message object from the Discord.js API
  */
 function help(message) {
     message.channel.send(helpMessage)

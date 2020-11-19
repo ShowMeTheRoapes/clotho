@@ -1,10 +1,11 @@
 const { STRAWPOLL_KEY } = require('../config.json')
+const { Message } = require('discord.js')
 const axios = require('axios').default
 
 /**
  * Close the current poll, create a StrawPoll, and post it in the channel automatically.
  * @param {object} poll The Poll object holding all Poll information
- * @param {object} message The Message object from the Discord.js API
+ * @param {Message} message The Message object from the Discord.js API
  */
 async function closePoll(poll, message) {
     if (!poll.title) {
