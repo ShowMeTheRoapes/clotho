@@ -36,36 +36,7 @@ client.on('message', async message => {
             break
 
         case 'submit':
-            const newCandidate = args.join(' ')
-            const { username } = message.author
-
-            if (username in options) {
-                message.reply("Clotho has received another submission from you! It will replace your previous submission.")
-                message.author.createDM()
-                    .then(dm => dm.send(`Clotho received another submission from you!\nYour previous candidate, "${options[username].candidate}", will be replaced with your new submission, "${newCandidate}".`))
-            } else {
-                message.reply('your submission has been saved!')
-                message.author.createDM()
-                    .then(dm => dm.send(`Clotho has received your candidate "${newCandidate}"!`))
-            }
-
-            const duplicateSubmissions = Object.keys(options)
-                .filter(user => user !== message.author.username)
-                .filter(user => options[user].candidate.toLowerCase() === newCandidate.toLowerCase())
-
-            if (duplicateSubmissions.length) {
-                message.reply('Actually, this candidate has already been submitted by another user. Please submit again!')
-                message.author.createDM()
-                    .then(dm => dm.send(`Unfortunately, your proposed candidate "${newCandidate}" has already been submitted. Please submit a different candidate.`))
-                break
-            }
-
-            options[username] = {
-                user: message.author,
-                candidate: newCandidate,
-            }
-
-            message.delete()
+            await runCommand('Submit', () => actions.submit(poll, message, args))
             break
 
         case 'closesubmissions':
