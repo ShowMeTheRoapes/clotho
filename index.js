@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 const axios = require('axios').default
-const { ping }  = require('./actions')
+const actions  = require('./actions')
 
 const client = new Discord.Client()
 const prefix = '!!'
@@ -28,20 +28,11 @@ client.on('message', async message => {
 
     switch (command) {
         case 'ping':
-            console.log(`Ping received from ${message.author.username}`)
-            ping(message)
+            runCommand('Ping', () => actions.ping(message))
             break
 
-        case 'start':
-            const title = args.join(' ')
-            if (!title) {
-                message.reply('Please provide a title for the poll.')
-                break
-            }
-            pollTitle = title
-
-            message.channel.send(`Poll "${pollTitle}" has begun! Please submit your candidates using the command **!!submit [candidate]**`)
-            message.delete()
+        case 'startpoll':
+            runCommand('Start Poll', () => actions.startPoll(poll, message, args))
             break
 
         case 'submit':
@@ -118,14 +109,7 @@ client.on('message', async message => {
             break
 
         case 'help':
-            const helpMessage = `
-Here's a list of the valid commands for Clotho!
-
-**!!ping** - Test that the bot is healthy.
-**!!submit [candidate for poll]** - Submit your candidate for the current poll.
-**!!closesubmissions** - Stop taking submissions for the current poll and create a poll with the given candidates.
-`
-            message.channel.send(helpMessage)
+            runCommand('Help', () => actions.help(message))
             break
 
         default:
