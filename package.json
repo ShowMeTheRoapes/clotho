@@ -7,7 +7,14 @@
   "author": "Alex Hoopes <kevin.alex.hoopes@gmail.com>",
   "license": "GPL",
   "private": false,
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
+    "axios": "^0.21.0",
     "discord.js": "^12.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
