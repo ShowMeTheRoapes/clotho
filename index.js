@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 const axios = require('axios').default
+const { ping }  = require('./actions')
 
 const client = new Discord.Client()
 const prefix = '!!'
@@ -19,7 +20,8 @@ client.on('message', async message => {
 
     switch (command) {
         case 'ping':
-            message.reply('Clotho is up and running!')
+            console.log(`Ping received from ${message.author.username}`)
+            ping(message)
             break
 
         case 'start':
