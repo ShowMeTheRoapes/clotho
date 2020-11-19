@@ -6,9 +6,11 @@ const { ping }  = require('./actions')
 const client = new Discord.Client()
 const prefix = '!!'
 
-let options = {}
-let pollTitle = 'Default Poll Title'
-let pollId = ''
+const poll = {
+    title: '',
+    strawPollId: '',
+    candidates: {},
+}
 
 client.on('message', async message => {
     const isIgnorable = message.author.bot || !message.content.startsWith(prefix)
