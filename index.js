@@ -39,21 +39,8 @@ client.on('message', async message => {
             await runCommand('Submit', () => actions.submit(poll, message, args))
             break
 
-        case 'closesubmissions':
-            message.channel.send('Thank you for your submissions! A poll will be created with your candidates shortly.')
-
-            const body = {
-                poll: {
-                    title: pollTitle,
-                    answers: Object.values(options).map(o => o.candidate),
-                }
-            }
-            const createResponse = await axios.post('https://strawpoll.com/api/poll', body, { headers: { 'API-KEY': config.STRAWPOLL_KEY } })
-            pollId = createResponse.data.content_id
-            message.channel.send(`Please vote on StrawPoll: https://strawpoll.com/${pollId}`)
-
-            message.delete()
-
+        case 'closepoll':
+            await runCommand('Close Poll', () => actions.closePoll(poll, message))
             break
 
         case 'declare':
