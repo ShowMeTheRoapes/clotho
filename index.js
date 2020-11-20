@@ -26,6 +26,7 @@ client.on('message', async message => {
             await actionFunc()
         } catch (error) {
             console.error(error.message)
+            console.table(poll)
             message.reply(`ERROR: ${error.message}`)
         } finally {
             message.delete()

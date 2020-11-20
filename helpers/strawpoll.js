@@ -26,7 +26,7 @@ function createStrawPoll(poll) {
  * @param {string} pollId The StrawPoll ID provided from the StrawPoll API
  */
 function getStrawPollResults(pollId) {
-    return axios.get(`${STRAWPOLL_URL}${pollId}`, { headers })
+    return axios.get(`${STRAWPOLL_URL}/${pollId}`, { headers })
 }
 
 
