@@ -4,9 +4,10 @@ const { directMessage } = require('../helpers')
 /**
  * Validate the input and the poll state before allowing another poll to start
  * @param {object} poll The Poll object holding all Poll information
+ * @param {Message} message The Message object from the Discord.js API
  * @param {string} candidate The proposed candidate being submitted
  */
-async function validate(poll, candidate) {
+async function validate(poll, message, candidate) {
     if (!poll.title) {
         throw new Error('A poll has not been started! Please start one with the **!!startpoll** command.')
     }
@@ -16,11 +17,11 @@ async function validate(poll, candidate) {
     }
 
     const duplicateSubmissions = Object.keys(poll.candidates)
-        .filter(user => user !== author.username)
+        .filter(user => user !== message.author.username)
         .filter(user => poll.candidates[user].candidate.toLowerCase() === candidate.toLowerCase())
 
     if (duplicateSubmissions.length) {
-        await directMessage(`Unfortunately, your proposed candidate "${candidate}" has already been submitted. Please submit a different candidate.`)
+        await directMessage(`Unfortunately, your proposed candidate "${candidate}" has already been submitted by another member. Please submit a different candidate.`)
         throw new Error('Your candidate has already been submitted by another user. Please submit again!')
     }
 }
@@ -39,7 +40,7 @@ async function submit(poll, message, args) {
     const { username } = author
 
     try {
-        await validate(poll, newCandidate)
+        await validate(poll, message, newCandidate)
     } catch (error) {
         message.reply(`ERROR: ${error.message}`)
         return
