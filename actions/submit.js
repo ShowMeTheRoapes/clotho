@@ -48,10 +48,11 @@ async function submit(poll, message, args) {
     if (username in poll.candidates) {
         message.reply("Clotho has received another submission from you! It will replace your previous submission.")
         await directMessage(author, `Clotho received another submission from you!\nYour previous candidate, "${poll.candidates[username].candidate}", will be replaced with your new submission, "${newCandidate}".`)
-    } else {
-        message.reply('your submission has been saved!')
-        await directMessage(author, `Clotho has received your candidate "${newCandidate}"!`)
+        return
     }
+
+    message.reply('your submission has been saved!')
+    await directMessage(author, `Clotho has received your candidate "${newCandidate}"!`)
 
     poll.candidates[username] = {
         user: author,
