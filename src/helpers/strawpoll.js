@@ -1,4 +1,4 @@
-const { STRAWPOLL_KEY } = require('../config.json')
+const { STRAWPOLL_KEY } = require('../../config.json')
 const axios = require('axios').default
 
 const STRAWPOLL_URL = 'https://strawpoll.com/api/poll'

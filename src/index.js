@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const config = require('./config.json')
+const config = require('../config.json')
 const actions = require('./actions')
 const { Poll } = require('./classes')
 
