@@ -1,8 +1,9 @@
 const { Message } = require('discord.js')
+const { Poll } = require('../classes')
 
 /**
  * Validate the input and the poll state before allowing another poll to start
- * @param {object} poll The Poll object holding all Poll information
+ * @param {Poll} poll The Poll object holding all Poll information
  * @param {string} title The proposed title of the poll
  */
 function validate(poll, title) {
@@ -18,7 +19,7 @@ function validate(poll, title) {
 /**
  * Start a poll with a title.
  * If a poll is already active, it will reject the request until that poll is closed.
- * @param {object} poll The Poll object holding all Poll information
+ * @param {Poll} poll The Poll object holding all Poll information
  * @param {Message} message The Message object from the Discord.js API
  * @param {String[]} args The arguments that were provided after the command
  */

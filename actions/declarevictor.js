@@ -1,4 +1,5 @@
 const { Message } = require('discord.js')
+const { Poll } = require('../classes')
 const { getStrawPollResults } = require('../helpers')
 
 const sortByVotes = (a, b) => {
@@ -9,7 +10,7 @@ const sortByVotes = (a, b) => {
 
 /**
  * Validate the poll state before attempting to declare a winner
- * @param {object} poll The Poll object holding all Poll information
+ * @param {Poll} poll The Poll object holding all Poll information
  */
 function validate(poll) {
     if (!poll.title) {
@@ -22,18 +23,8 @@ function validate(poll) {
 }
 
 /**
- * Reset all information in the poll object
- * @param {object} poll The Poll object holding all Poll information
- */
-function resetPoll(poll) {
-    poll.candidates = {}
-    poll.title = ''
-    poll.strawPollId = ''
-}
-
-/**
  * Determine the victor of the StrawPoll and post it in the channel.
- * @param {object} poll The Poll object holding all Poll information
+ * @param {Poll} poll The Poll object holding all Poll information
  * @param {Message} message The Message object from the Discord.js API
  */
 async function declareVictor(poll, message) {
@@ -56,7 +47,7 @@ async function declareVictor(poll, message) {
         message.channel.send(`A champion has been selected! The winner of "${poll.title}" is... ***${winner[0].answer}!***`)
     }
 
-    resetPoll(poll)
+    poll.resetPoll()
 }
 
 module.exports = declareVictor
