@@ -1,9 +1,10 @@
 const { Message } = require('discord.js')
+const { Poll } = require('../classes')
 const { createStrawPoll } = require('../helpers')
 
 /**
  * Validate the input and the poll state before closing the current poll
- * @param {object} poll
+ * @param {Poll} poll The Poll object holding all Poll information
  */
 function validate(poll) {
     if (!poll.title) {
@@ -16,8 +17,8 @@ function validate(poll) {
 }
 
 /**
- * Close the current poll, create a StrawPoll, and post it in the channel automatically.
- * @param {object} poll The Poll object holding all Poll information
+ * Close the current poll, create a StrawPoll, and post it in the channel
+ * @param {Poll} poll The Poll object holding all Poll information
  * @param {Message} message The Message object from the Discord.js API
  */
 async function closePoll(poll, message) {

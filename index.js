@@ -1,15 +1,12 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 const actions = require('./actions')
+const { Poll } = require('./classes')
 
 const client = new Discord.Client()
 const prefix = '!!'
 
-const poll = {
-    title: '',
-    strawPollId: '',
-    candidates: {},
-}
+const poll = new Poll()
 
 client.on('message', async message => {
     const isIgnorable = message.author.bot || !message.content.startsWith(prefix)
