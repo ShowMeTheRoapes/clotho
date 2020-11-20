@@ -56,7 +56,7 @@ async function declareVictor(poll, message) {
         message.channel.send(`A champion has been selected! The winner of "${poll.title}" is... ***${winner[0].answer}!***`)
     }
 
-    resetPoll()
+    resetPoll(poll)
 }
 
 module.exports = declareVictor
