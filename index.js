@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
-const actions  = require('./actions')
+const actions = require('./actions')
 
 const client = new Discord.Client()
 const prefix = '!!'
@@ -21,8 +21,16 @@ client.on('message', async message => {
 
     const runCommand = async (actionName, actionFunc) => {
         console.log(`${actionName} command received from ${message.author.username}`)
-        await actionFunc()
-        message.delete()
+
+        try {
+            await actionFunc()
+        } catch (error) {
+            console.error(error.message)
+            console.table(poll)
+            message.reply(`ERROR: ${error.message}`)
+        } finally {
+            message.delete()
+        }
     }
 
     switch (command) {
