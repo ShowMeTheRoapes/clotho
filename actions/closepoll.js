@@ -21,12 +21,7 @@ function validate(poll) {
  * @param {Message} message The Message object from the Discord.js API
  */
 async function closePoll(poll, message) {
-    try {
-        validate(poll)
-    } catch (error) {
-        message.reply(`ERROR: ${error.message}`)
-        return
-    }
+    validate(poll)
 
     message.channel.send('Thank you for your submissions! A poll will be created with your candidates shortly.')
 

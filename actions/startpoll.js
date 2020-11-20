@@ -24,12 +24,7 @@ function validate(poll, title) {
  */
 function startPoll(poll, message, args) {
     const title = args.join(' ').trim()
-    try {
-        validate(poll, title)
-    } catch (error) {
-        message.reply(`ERROR: ${error.message}`)
-        return
-    }
+    validate(poll, title)
 
     poll.title = title
     message.channel.send(`Poll "${poll.title}" has begun! Please submit your candidates using the command **!!submit [candidate]**`)

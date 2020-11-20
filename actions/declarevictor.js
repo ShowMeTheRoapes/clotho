@@ -37,12 +37,7 @@ function resetPoll(poll) {
  * @param {Message} message The Message object from the Discord.js API
  */
 async function declareVictor(poll, message) {
-    try {
-        validate(poll)
-    } catch (error) {
-        message.reply(`ERROR: ${error.message}`)
-        return
-    }
+    validate(poll)
 
     const response = await getStrawPollResults(poll.strawPollId)
     const { poll_answers } = response.data.content.poll

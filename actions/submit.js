@@ -39,12 +39,7 @@ async function submit(poll, message, args) {
     const { author } = message
     const { username } = author
 
-    try {
-        await validate(poll, message, newCandidate)
-    } catch (error) {
-        message.reply(`ERROR: ${error.message}`)
-        return
-    }
+    await validate(poll, message, newCandidate)
 
     if (username in poll.candidates) {
         message.reply("Clotho has received another submission from you! It will replace your previous submission.")
