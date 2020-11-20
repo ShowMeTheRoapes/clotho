@@ -1,5 +1,5 @@
 const { Message } = require('discord.js')
-const { createStrawPoll } = require('../')
+const { createStrawPoll } = require('../helpers')
 
 /**
  * Validate the input and the poll state before closing the current poll
