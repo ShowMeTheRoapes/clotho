@@ -60,5 +60,7 @@ client.on('message', async message => {
     }
 })
 
-client.login(config.BOT_TOKEN)
+client.login(config.BOT_TOKEN).then(() => {
+    client.user.setActivity('!!help', { type: 'PLAYING' })
+})
 console.log('Clotho is up and running!')
