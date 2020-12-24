@@ -40,9 +40,9 @@
   <p align="center">
     A Discord bot to aid in group-based decision-making
     <br />
-    <a href="https://github.com/github_username/repo_name/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/ShowMeTheRoapes/clotho/issues/new/choose">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues/new/choose">Request Feature</a>
+    <a href="https://github.com/ShowMeTheRoapes/clotho/issues/new/choose">Request Feature</a>
   </p>
 </p>
 
@@ -50,7 +50,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -83,14 +83,13 @@
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+`github_username`, `clotho`, `twitter_handle`, `kevin.alex.hoopes@gmail.com`, `project_title`, `project_description`
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [NodeJS](https://nodejs.org/en/)
+* [DiscordJS](https://discord.js.org/#/)
 
 
 
@@ -111,7 +110,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ShowMeTheRoapes/clotho.git
    ```
 2. Install NPM packages
    ```sh
@@ -131,14 +130,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
+As of right now, there isn't much else that I want to add. I may come up with a better/more efficient way of the bot performing its utilities, but at the moment it's working perfectly for my friends and I!
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/ShowMeTheRoapes/clotho/issues) for a list of proposed features (and known issues).
 
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
@@ -151,30 +150,13 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- LICENSE -->
 ## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the PGPL 2.0 License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
-
+## Author
+Alex Hoopes: kevin.alex.hoopes@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
