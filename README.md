@@ -170,4 +170,4 @@ Alex Hoopes: kevin.alex.hoopes@gmail.com
 [issues-url]: https://github.com/ShowMeTheRoapes/clotho/issues
 [license-shield]: https://img.shields.io/github/license/ShowMeTheRoapes/clotho.svg?style=for-the-badge
 [license-url]: https://github.com/ShowMeTheRoapes/clotho/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/demo.gif
