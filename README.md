@@ -63,14 +63,15 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#set-up">Set Up</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#author">Author</a></li>
   </ol>
 </details>
 
@@ -79,32 +80,31 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Clotho Screen Shot][product-screenshot]](https://github.com/ShowMeTheRoapes/clotho)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `clotho`, `twitter_handle`, `kevin.alex.hoopes@gmail.com`, `project_title`, `project_description`
-
+Clotho is a Discord bot that I made to help my friends and I suggest things, vote on said things, and determine which thing wins via anonymous surveys.
+The surveys are supplied using [StrawPoll](https://strawpoll.com/) and their [free API](https://strawpoll.com/api-docs) (thanks StrawPoll!).
 
 ### Built With
 
 * [NodeJS](https://nodejs.org/en/)
 * [DiscordJS](https://discord.js.org/#/)
 
+I actually followed a pretty [straight-forward tutorial](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js#prerequisites) to get the bot itself set up in Discord. I highly recommend it if you're looking to build your own!
+
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+As of right now, I don't have this bot hosted anywhere for public use. To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You'll need the latest version of [Node](https://nodejs.org/en/), and that's about it.
+```sh
+npm install npm@latest -g
+```
 
 ### Installation
 
@@ -117,6 +117,11 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
+### Set Up
+
+Funnily enough this is the most complex part. You'll need to set up the `config.json` file with the tokens/API keys necessary for everything to communicate properly.
+
+***MORE TO COME***
 
 
 <!-- USAGE EXAMPLES -->
@@ -126,6 +131,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
+***MORE TO COME***
+
 
 
 <!-- ROADMAP -->
@@ -134,6 +141,17 @@ As of right now, there isn't much else that I want to add. I may come up with a 
 
 See the [open issues](https://github.com/ShowMeTheRoapes/clotho/issues) for a list of proposed features (and known issues).
 
+
+
+<!-- FAQ -->
+## FAQ
+Or rather, what I'm anticipating people will ask
+
+#### Why "Clotho"?
+[Clotho](https://en.wikipedia.org/wiki/Clotho) is one of the three Sisters of Fate in Greek mythology. Specifically, she's the one who spins the thread of human life and thus makes all major decisions. It seemed to fit the goal, however dramatic it may be. :)
+
+#### Can't I just use your bot?
+At the moment I don't have a publicly hosted version of the bot available, but if there's enough interest I would be willing to put some work towards that!
 
 
 <!-- CONTRIBUTING -->
@@ -150,7 +168,7 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- LICENSE -->
 ## License
-Distributed under the PGPL 2.0 License. See `LICENSE` for more information.
+Distributed under the GPL 2.0 License. See `LICENSE` for more information.
 
 
 
