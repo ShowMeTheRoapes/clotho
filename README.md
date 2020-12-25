@@ -157,7 +157,7 @@ All of Clotho's commands begin with `!!`, and you can always get a printed summa
 | `!!submit`    | Candidate  | Clotho will record your candidate and user information for the open poll.<br>If you submit another candidate, it will replace your current one.<br>Clotho will send you a private message to show you what she received/saved as your submission. |
 | `!!closepoll` | None       | Clotho will no longer accept submissions for the open poll.<br>Clotho will use the StrawPoll API to create a poll with all of the submitted candidates and post the link to it.                                                                 |
 | `!!declare`   | None       | Clotho will inspect the StrawPoll, determine which candidate is the winner, and post a message about it.<br>All poll information will be cleared and a new one may be started.                                                                  |
-
+| `!!reset`   | None       | Reset all poll information to nothing. You'll have a clean slate!                                                                  |
 
 <!-- ROADMAP -->
 ## Roadmap
