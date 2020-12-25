@@ -114,14 +114,30 @@ npm install npm@latest -g
    ```
 2. Install NPM packages
    ```sh
+   # if you use npm
    npm install
+
+   # if you use yarn
+   yarn
    ```
 
 ### Set Up
+1. [Create a bot account on Discord, generate a token, and invite it to your channel](https://discordpy.readthedocs.io/en/latest/discord.html)
+1. Create a [StrawPoll](https://strawpoll.com/) account and generate an API key by going to **Settings** => **API Key**
+1. In the root directory of Clotho, create a file called `config.json` that looks like this:
+   ```json
+   {
+     "BOT_TOKEN": "Your bot's token",
+     "STRAWPOLL_KEY": "Your StrawPoll API key"
+   }
+   ```
 
-Funnily enough this is the most complex part. You'll need to set up the `config.json` file with the tokens/API keys necessary for everything to communicate properly.
+### Running Clotho
+1. Go to the root directory
+1. `yarn && yarn start`
+1. Your terminal should say "Clotho is up and running!"
+   * If you also see that the bot account you put in your channel is active with a green dot next to it, then you're good to go!
 
-***MORE TO COME***
 
 
 <!-- USAGE EXAMPLES -->
@@ -137,7 +153,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-As of right now, there isn't much else that I want to add. I may come up with a better/more efficient way of the bot performing its utilities, but at the moment it's working perfectly for my friends and I!
+As of right now, there isn't much else that I want to add. I have one or two quality-of-life commands that I would like to add, and I may come up with a better/more efficient way for the bot to perform its utilities, but at the moment it's working perfectly for my friends and I!
 
 See the [open issues](https://github.com/ShowMeTheRoapes/clotho/issues) for a list of proposed features (and known issues).
 
@@ -152,6 +168,7 @@ Or rather, what I'm anticipating people will ask
 
 #### Can't I just use your bot?
 At the moment I don't have a publicly hosted version of the bot available, but if there's enough interest I would be willing to put some work towards that!
+
 
 
 <!-- CONTRIBUTING -->
@@ -175,6 +192,8 @@ Distributed under the GPL 2.0 License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Author
 Alex Hoopes: kevin.alex.hoopes@gmail.com
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
