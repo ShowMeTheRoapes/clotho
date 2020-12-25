@@ -64,6 +64,7 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#set-up">Set Up</a></li>
+        <li><a href="#running-clotho">Running Clotho</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -168,7 +169,7 @@ See the [open issues](https://github.com/ShowMeTheRoapes/clotho/issues) for a li
 
 <!-- FAQ -->
 ## FAQ
-Or rather, what I'm anticipating people will ask
+Or rather, what I'm anticipating people will ask. :shrug:
 
 #### Why "Clotho"?
 [Clotho](https://en.wikipedia.org/wiki/Clotho) is one of the three Sisters of Fate in Greek mythology. Specifically, she's the one who spins the thread of human life and thus makes all major decisions. It seemed to fit the goal, however dramatic it may be. :)
