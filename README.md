@@ -161,7 +161,7 @@ All of Clotho's commands begin with `!!`, and you can always get a printed summa
 
 <!-- ROADMAP -->
 ## Roadmap
-As of right now, there isn't much else that I want to add. I have one or two quality-of-life commands that I would like to add, and I may come up with a better/more efficient way for the bot to perform its utilities, but at the moment it's working perfectly for my friends and I!
+As of right now, there isn't much else that I want to add. I have one or two quality-of-life things that I would like to add, and I may come up with a better/more efficient way for the bot to perform its utilities, but at the moment it's working perfectly for my friends and I!
 
 See the [open issues](https://github.com/ShowMeTheRoapes/clotho/issues) for a list of proposed features (and known issues).
 
