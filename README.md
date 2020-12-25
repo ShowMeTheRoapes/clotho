@@ -149,7 +149,7 @@ All of Clotho's commands begin with `!!`, and you can always get a printed summa
 
 ### Commands
 |   Command   | Parameters |                                                                                                                  Explanation                                                                                                                 |
-|:-----------:|:----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|-----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `!!ping`      | None       | Clotho replies with a message to let you know she is up and running.                                                                                                                                                                         |
 | `!!help`      | None       | Clotho will reply with a list of all commands and how to use them.                                                                                                                                                                           |
 | `!!startpoll` | Poll Title | Clotho will begin recording information for a poll with the given title.<br>Users will now be able to use the `!!submit` command.                                                                                                                |
