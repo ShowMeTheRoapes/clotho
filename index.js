@@ -50,6 +50,10 @@ client.on('message', async message => {
             await runCommand('Declare Victor', () => actions.declareVictor(poll, message))
             break
 
+        case 'reset':
+            await runCommand('Reset Poll', () => actions.reset(poll, message))
+            break
+
         case 'help':
             await runCommand('Help', () => actions.help(message))
             break
