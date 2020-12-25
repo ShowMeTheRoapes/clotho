@@ -142,18 +142,20 @@ npm install npm@latest -g
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-> "Great, the bot is up and running. Now how do I use it??"
+> "Great, the bot is running. Now how do I use it??"
 \- You, probably
+
+All of Clotho's commands begin with `!!`, and you can always get a printed summary of every command with `!!help`. Clotho's status in Discord displays as "Playing !!help", so you can look at the bot's avatar in the server if you forget the help command. :+1:
 
 ### Commands
 |   Command   | Parameters |                                                                                                                  Explanation                                                                                                                 |
 |:-----------:|:----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| !!ping      | None       | Clotho replies with a message to let you know she is up and running.                                                                                                                                                                         |
-| !!help      | None       | Clotho will reply with a list of all commands and how to use them.                                                                                                                                                                           |
-| !!startpoll | Poll Title | Clotho will begin recording information for a poll with the given title. Users will now be able to use the `!!submit` command                                                                                                                |
-| !!submit    | Candidate  | Clotho will record your candidate and user information for the open poll. If you submit another candidate, it will replace your current one.  Clotho will send you a private message to show you what she received/saved as your submission. |
-| !!closepoll | None       | Clotho will no longer accept submissions for the open poll. Clotho will use the StrawPoll API to create a poll with all of the submitted candidates and post the link to it.                                                                 |
-| !!declare   | None       | Clotho will inspect the StrawPoll, determine which candidate is the winner, and post a message about it. All poll information will be cleared and a new one may be started.                                                                  |
+| `!!ping`      | None       | Clotho replies with a message to let you know she is up and running.                                                                                                                                                                         |
+| `!!help`      | None       | Clotho will reply with a list of all commands and how to use them.                                                                                                                                                                           |
+| `!!startpoll` | Poll Title | Clotho will begin recording information for a poll with the given title.<br>Users will now be able to use the `!!submit` command.                                                                                                                |
+| `!!submit`    | Candidate  | Clotho will record your candidate and user information for the open poll.<br>If you submit another candidate, it will replace your current one.<br>Clotho will send you a private message to show you what she received/saved as your submission. |
+| `!!closepoll` | None       | Clotho will no longer accept submissions for the open poll.<br>Clotho will use the StrawPoll API to create a poll with all of the submitted candidates and post the link to it.                                                                 |
+| `!!declare`   | None       | Clotho will inspect the StrawPoll, determine which candidate is the winner, and post a message about it.<br>All poll information will be cleared and a new one may be started.                                                                  |
 
 
 <!-- ROADMAP -->
