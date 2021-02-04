@@ -1,4 +1,5 @@
 const { STRAWPOLL_KEY } = require('../config.json')
+const { Poll } = require('../classes')
 const axios = require('axios').default
 
 const STRAWPOLL_URL = 'https://strawpoll.com/api/poll'
@@ -7,7 +8,7 @@ const headers = { 'API-KEY': STRAWPOLL_KEY }
 /**
  * Create a StrawPoll for the given Poll using the StrawPoll API.
  * https://strawpoll.com/api-docs
- * @param {object} poll The Poll object holding all Poll information
+ * @param {Poll} poll The Poll object holding all Poll information
  */
 function createStrawPoll(poll) {
     const body = {
