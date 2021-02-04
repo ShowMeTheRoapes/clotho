@@ -1,6 +1,6 @@
 const { Message } = require('discord.js')
 const { Poll } = require('../classes')
-const { getStrawPollResults } = require('../helpers')
+const { getStrawPollResults, createStrawPoll } = require('../helpers')
 
 const sortByVotes = (a, b) => {
     if (a.votes < b.votes) return -1
@@ -37,17 +37,22 @@ async function declareVictor(poll, message) {
     const winner = poll_answers.filter(answer => answer.votes === poll_answers[poll_answers.length - 1].votes)
 
     if (!winner.length) {
-        console.error(`Not sure how this happened, but winner array has a value of ${winner.length}. This is very unexpected!`)
+        console.error(`Not sure how this happened, but winner array has a value of ${winner}. This is very unexpected!`)
         message.reply('ERROR: Something went wrong while trying to declare the winner! Please check the logs.')
     }
 
     if (winner.length > 1) {
-        message.channel.send(`There has been a tie between the following candidates: ${winner.map(cand => cand.answer).join(', ')}\nBreak the tie however you see fit!`)
+        message.channel.send(`There has been a tie between the following candidates: ${winner.map(cand => cand.answer).join(', ')}\nPlease vote again on the tiebreaker StrawPoll provided below!`)
+
+        poll.candidates = poll.candidates.filter(c => winner.some(w => w.answer.toLowerCase() === c.candidate))
+        const response = await createStrawPoll(poll)
+        poll.strawPollId = response.data.content_id
+
+        message.channel.send(`Please vote on StrawPoll: https://strawpoll.com/${poll.strawPollId}`)
     } else {
         message.channel.send(`A champion has been selected! The winner of "${poll.title}" is... ***${winner[0].answer}!***`)
+        poll.resetPoll()
     }
-
-    poll.resetPoll()
 }
 
 module.exports = declareVictor
