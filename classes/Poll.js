@@ -23,6 +23,10 @@ class Poll {
         return this.#candidates
     }
 
+    set candidates(candidates) {
+        this.#candidates = candidates
+    }
+
     addCandidate(username, candidate) {
         this.#candidates[username] = candidate
     }
