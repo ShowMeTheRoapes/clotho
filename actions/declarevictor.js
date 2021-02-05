@@ -44,7 +44,15 @@ async function declareVictor(poll, message) {
     if (winner.length > 1) {
         message.channel.send(`There has been a tie between the following candidates: ${winner.map(cand => cand.answer).join(' :fire: ')}\nPlease vote again on the tiebreaker StrawPoll provided below!`)
 
-        poll.candidates = poll.candidates.filter(c => winner.some(w => w.answer.toLowerCase() === c.candidate.toLowerCase()))
+        const newCandidates = {}
+        for (const user in poll.candidates) {
+            if (Object.hasOwnProperty.call(poll.candidates, user) && winner.some(w => w.answer.toLowerCase() === poll.candidates[user].candidate.toLowerCase())) {
+                newCandidates[user] = poll.candidates[user]
+            }
+        }
+
+        poll.candidates = newCandidates
+
         const response = await createStrawPoll(poll)
         poll.strawPollId = response.data.content_id
 
