@@ -17,7 +17,7 @@ async function validate(poll, message, candidate) {
         throw new Error('No candidate was provided! Please use the **!!help** command to see proper usage')
     }
 
-    if (poll.strawPollId){
+    if (poll.isClosed){
         throw new Error('This poll has been closed, so your candidate cannot be received right now. Please start a new poll with the *!!startpoll* command.')
     }
 

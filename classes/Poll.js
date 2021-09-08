@@ -1,14 +1,18 @@
 class Poll {
-    #title = ''
-    #strawPollId = ''
     #candidates = {}
+    #strawPollId = ''
+    #title = ''
 
-    get title() {
-        return this.#title
+    get candidates() {
+        return this.#candidates
     }
 
-    set title(title) {
-        this.#title = title
+    set candidates(candidates) {
+        this.#candidates = candidates
+    }
+
+    get isClosed() {
+        return !!this.#strawPollId
     }
 
     get strawPollId() {
@@ -19,12 +23,12 @@ class Poll {
         this.#strawPollId = pollId
     }
 
-    get candidates() {
-        return this.#candidates
+    get title() {
+        return this.#title
     }
 
-    set candidates(candidates) {
-        this.#candidates = candidates
+    set title(title) {
+        this.#title = title
     }
 
     addCandidate(username, candidate) {
